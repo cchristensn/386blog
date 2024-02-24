@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Regex Tutorial" 
+title:  "Sift Through Chaos: A Regex Tutorial" 
 date: 2024-02-22
-description: Learning how to use regex for python.   
-image: "/assets/img/image5.jpg"
-display_image: false  # change this to true to display the image below the banner 
+description: Learning how to use regex for python and data collection.   
+image: "/assets/img/RegExLogo.jpg"
+display_image: true  # change this to true to display the image below the banner 
 ---
 
 ### So what's all this then?
@@ -13,7 +13,7 @@ When I was a lad, I had a cat named "Howard". This cat taught a lesson I will ne
 
 > Caleb, my boy, foolish is a man who uses regular expressions, but foolisher is a man who doesn't.
 
-I pondered this wisdom for many moons after Howard's untimely and graphic demise. After struggleing with her words, I grew to know the truth of the world at large.
+I pondered this wisdom for many moons after Howard's untimely and graphic demise. After struggleing with her words, I grew to know the truth of the world at large. And so today I will teach you all how to use regex.
 
 
 ### What is Regex?
