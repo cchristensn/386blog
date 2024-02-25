@@ -27,13 +27,13 @@ For example, if I wanted to find the words 'bat' or 'cat' in an article, I could
 The base of regex is merely the characters that you can type. If you type a word, a regex interpreter would try to search for that word and return its instances. But as I said above, this is no better than using a built in search feature. So let's expand our arsenal.
 
 ##### Brackets
-Brackets '[]' are a way to search for multiply different things. Brackets create a set of symbols that returns a match in that position. The example that I made above using the expression, `[bc]at`, uses brackets. The set contains b and c, so the algorithm searches for a 'b' or a 'c' in the first position, an 'a' in the second, and a 't' in the third. Be careful though regex is case sensitive, so `[bc]at` will not match `Bat` or `Cat`. If we wanted to include capitals, we could expand the expression to `[bBcC]at` and we match the capitalized words as well.
+Brackets `[]` are a way to search for multiply different things. Brackets create a set of symbols that returns a match in that position. The example that I made above using the expression, `[bc]at`, uses brackets. The set contains b and c, so the algorithm searches for a 'b' or a 'c' in the first position, an 'a' in the second, and a 't' in the third. Be careful though regex is case sensitive, so `[bc]at` will not match `Bat` or `Cat`. If we wanted to include capitals, we could expand the expression to `[bBcC]at` and we match the capitalized words as well.
 
-```
+`
 Pattern: '[bBcC]at'
 Phrase: 'I love my bat. Cats are good also.' 
 Matches: 'I love my ==bat==. ==Cat==s are good also.' 
-```
+`
 ##### Ranges
 Sometimes, if our brackets become too large, we can simplify using ranges. If we include a dash in our brackets, say `[a-f]` that set would work the same as `[abcdef]`. This functionality works the same for capitals and numbers. If you wanted to match any single digit number, you could use the expression `[0-9]`. 
 
@@ -54,11 +54,11 @@ Some other common symbols that are used are `[^]` which is a 'not' character. Pu
 
 With all these special characters, they can be hard to call the character itself. `\` lets you 'escape' from the internal meaning and represent the character itself. `\^` matches '^', `\$` matches '$', `\\` matches `\`.
 
-![Figure]('https://cchristensn.github.io/386blog/assets/img/regexExample.jpg')[^1]
+![Figure]('{{site.url}}/{{site.baseurl}}/assets/img/regexExample.jpg')[^1]
 
 ### Applications
 
-In Python, the package re is used for regular expressions. The most common commands in this package are re.search() and re.findall(). Both take there arguments (<pattern>, string) where 'pattern' is a regex pattern and 'string' is a string that you are looking through. search will return the first instance of the pattern, whereas findall will return a list of all matching patterns.
+In Python, the package re is used for regular expressions. The most common commands in this package are re.search() and re.findall(). Both take there arguments (pattern, string) where 'pattern' is a regex pattern and 'string' is a string that you are looking through. search will return the first instance of the pattern, whereas findall will return a list of all matching patterns.
 
 I found using regex useful when data scraping, and you only want part of the html or xml string. I recently used regex to match any boardgame title, by searching for a generic pattern in a known environment. Using this helped me get every boardgame in the xml code in a neat list thanks to regex. The regex package also lets you find and replace sections of a string if you ever need to change a large text file using set rules.
 
