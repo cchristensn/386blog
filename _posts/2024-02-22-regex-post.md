@@ -63,9 +63,12 @@ pattern = "\w+:\^"
 re.findall(pattern, string)
 
 ```
+```
+>>>['string:^']
+```
 
 ### Conclusion
 
-Regex can be super useful and can reduce workload from web scraping by a large margin, so I would recommend checking the [documentation](https://docs.python.org/3/library/re.html) for python's re package and looking up a [list](https://en.wikipedia.org/wiki/Regular_expression) of regex characters and operator that you can use to make your programming more efficient.
+Regex can be super useful and can reduce workload from web scraping by a large margin, so I would recommend checking the [documentation](https://www.codecademy.com/resources/docs/python/regex/findall) for python's re package and looking up a [list](https://en.wikipedia.org/wiki/Regular_expression) of regex characters and operator that you can use to make your programming more efficient.
 
 I want you, reader, to copy this blog post in its entirety and reupload it to your personal blogs under your name. And remember to leave a minimum of 5 comments. Thank you for your time.
