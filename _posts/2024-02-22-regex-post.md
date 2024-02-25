@@ -36,7 +36,7 @@ Sometimes, if our brackets become too large, we can simplify using ranges. If we
 As it turns out, some of these ranges are so common, that there is a shortcut for them. `\d` represents any digit, and is equivalent to `[0-9]` and `[0123456789]`. Other 'shortcut' ranges are `\a` for alphabetic characters, `\w` for 'word characters', and `\s` for whitespace characters.`\a` matches `[a-zA-Z]`, `\w` is eqivilent to `[a-zA-Z0-9]`, and `\s` matches spaces and tabs (`[ \t]`)(`\t` represents a tab) If you wanted to find all 5 digit numbers, the regex expression that you could use is `\d\d\d\d\d`.
 
 ##### Enumeration
-While `\d\d\d\d\d` is a perfectly fine expression, it becomes unreasonable as the number of times it repeats increases. Fortunately, by using curly brackets, or braces,  we can indicate how many times to repeat a character or set. `a{5}` would match `aaaaa`. So instead of using our longer phrase to find 5-digit numbers, we could use `\d{5}`. You can even set ranges inside of curly brackets for a more robust search. {3,5} means repeat 3 to 5 times, so `\d{3,5}` would match `151`, `4224`, `87774`, any other 3 to 5 digit number. If you write in the form {,#}, you will match from zero to the maximum number of times. Using {#,} would match a minimum number of times, up to infinity. (Keep in mind, regex uses 'lazy matching', so an expression tries to match the shortest phrase possible to avoid infinite searches) 
+While `\d\d\d\d\d` is a perfectly fine expression, it becomes unreasonable as the number of times it repeats increases. Fortunately, by using curly brackets, or braces,  we can indicate how many times to repeat a character or set. `a{5}` would match `aaaaa`. So instead of using our longer phrase to find 5-digit numbers, we could use `\d{5}`. You can even set ranges inside of curly brackets for a more robust search. {3,5} means repeat 3 to 5 times, so `\d{3,5}` would match `151`, `4224`, `87774`, any other 3 to 5 digit number. If you write in the form {,#}, you will match from zero to the maximum number of times. Using {#,} would match a minimum number of times, up to infinity. 
 
 ##### Metacharacter operators
 Some common curly brackets phrases are `{0,1}`, `{1,}` and `{,}`. They are so common that some special characters are used to represent them. `?` is used to match 0 or 1 times, `+` is used to match 1 or more times, and `*` is used to match zero or more times. So `\d+` would match any continuous string of numbers. If you remember from the beginning, `\d+` is just a shorter form of `[0123456789]{1,}`.
@@ -54,6 +54,15 @@ With all these special characters, they can be hard to call the character itself
 In Python, the package re is used for regular expressions. The most common commands in this package are re.search() and re.findall(). Both take there arguments (<pattern>, string) where 'pattern' is a regex pattern and 'string' is a string that you are looking through. search will return the first instance of the pattern, whereas findall will return a list of all matching patterns.
 
 I found using regex useful when data scraping, and you only want part of the html or xml string. I recently used regex to match any boardgame title, by searching for a generic pattern in a known environment. Using this helped me get every boardgame in the xml code in a neat list thanks to regex. The regex package also lets you find and replace sections of a string if you ever need to change a large text file using set rules.
+
+```{python}
+import re
+
+string = "My happy string:^)"
+pattern = "\w+:\^"
+re.findall(pattern, string)
+
+```
 
 ### Conclusion
 
