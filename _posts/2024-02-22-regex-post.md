@@ -49,7 +49,7 @@ Some other common symbols that are used are `[^]` which is a 'not' character. Pu
 
 With all these special characters, they can be hard to call the character itself. `\` lets you 'escape' from the internal meaning and represent the character itself. `\^` matches '^', `\$` matches '$', `\\` matches `\`.
 
-![Figure]('/assets/img/regexExample.png')[^1]
+![Figure]('/assets/img/regexExample.jpg')[^1]
 
 ### Applications
 
