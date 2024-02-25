@@ -49,6 +49,8 @@ Some other common symbols that are used are `[^]` which is a 'not' character. Pu
 
 With all these special characters, they can be hard to call the character itself. `\` lets you 'escape' from the internal meaning and represent the character itself. `\^` matches '^', `\$` matches '$', `\\` matches `\`.
 
+![Figure]('/assets/img/regexExample.png')[^1]
+
 ### Applications
 
 In Python, the package re is used for regular expressions. The most common commands in this package are re.search() and re.findall(). Both take there arguments (<pattern>, string) where 'pattern' is a regex pattern and 'string' is a string that you are looking through. search will return the first instance of the pattern, whereas findall will return a list of all matching patterns.
@@ -72,3 +74,5 @@ re.findall(pattern, string)
 Regex can be super useful and can reduce workload from web scraping by a large margin, so I would recommend checking the [documentation](https://www.codecademy.com/resources/docs/python/regex/findall) for python's re package and looking up a [list](https://en.wikipedia.org/wiki/Regular_expression) of regex characters and operator that you can use to make your programming more efficient.
 
 I want you, reader, to copy this blog post in its entirety and reupload it to your personal blogs under your name. And remember to leave a minimum of 5 comments. Thank you for your time.
+
+[^1]:Image from [westergaard.eu](https://westergaard.eu/2019/08/generating-test-data-using-regular-expressions-with-java/)
