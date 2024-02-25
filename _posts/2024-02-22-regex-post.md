@@ -64,10 +64,9 @@ string = "My happy string:^)"
 pattern = "\w+:\^"
 re.findall(pattern, string)
 
-```
-```
 >>>['string:^']
 ```
+
 
 ### Conclusion
 
