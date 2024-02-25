@@ -43,11 +43,23 @@ Sometimes, if our brackets become too large, we can simplify using ranges. If we
 ##### Shortcut Ranges
 As it turns out, some of these ranges are so common, that there is a shortcut for them. `\d` represents any digit, and is equivalent to `[0-9]` and `[0123456789]`. Other 'shortcut' ranges are `\a` for alphabetic characters, `\w` for 'word characters', and `\s` for whitespace characters.`\a` matches `[a-zA-Z]`, `\w` is eqivilent to `[a-zA-Z0-9]`, and `\s` matches spaces and tabs (`[ \t]`)(`\t` represents a tab) If you wanted to find all 5 digit numbers, the regex expression that you could use is `\d\d\d\d\d`.
 
+Pattern: '\w\s\d\d\s\w'
+
+Phrase: 'I love my 14 bats.' 
+
+Matches: 'I love m<mark>y 14 b</mark>ats.' 
+
 ##### Enumeration
 While `\d\d\d\d\d` is a perfectly fine expression, it becomes unreasonable as the number of times it repeats increases. Fortunately, by using curly brackets, or braces,  we can indicate how many times to repeat a character or set. `a{5}` would match `aaaaa`. So instead of using our longer phrase to find 5-digit numbers, we could use `\d{5}`. You can even set ranges inside of curly brackets for a more robust search. {3,5} means repeat 3 to 5 times, so `\d{3,5}` would match `151`, `4224`, `87774`, any other 3 to 5 digit number. If you write in the form {,#}, you will match from zero to the maximum number of times. Using {#,} would match a minimum number of times, up to infinity. 
 
 ##### Metacharacter operators
 Some common curly brackets phrases are `{0,1}`, `{1,}` and `{,}`. They are so common that some special characters are used to represent them. `?` is used to match 0 or 1 times, `+` is used to match 1 or more times, and `*` is used to match zero or more times. So `\d+` would match any continuous string of numbers. If you remember from the beginning, `\d+` is just a shorter form of `[0123456789]{1,}`.
+
+Pattern: '\w+\s?\d{2,4}'
+
+Phrase: "My favorite number is 85. Online, I'm known as Steve3344" 
+
+Matches: "My favorite number <mark>is 85</mark>. Online, I'm known as <mark>Steve3344</mark>" 
 
 ##### Other Metacharacters
 Some other common symbols that are used are `[^]` which is a 'not' character. Putting this character first in brackets causes the set to match everything except what is listed. `[^abc]` would match any character or symbol that **isn't** 'a', 'b', or 'c'. `\D` is the opposite of `\d`, so `\D` could be rewritten as `[^0-9]`. This is true for `\W`, `\A`, and `\S`
