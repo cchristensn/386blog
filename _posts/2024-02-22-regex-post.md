@@ -30,7 +30,9 @@ The base of regex is merely the characters that you can type. If you type a word
 Brackets '[]' are a way to search for multiply different things. Brackets create a set of symbols that returns a match in that position. The example that I made above using the expression, `[bc]at`, uses brackets. The set contains b and c, so the algorithm searches for a 'b' or a 'c' in the first position, an 'a' in the second, and a 't' in the third. Be careful though regex is case sensitive, so `[bc]at` will not match `Bat` or `Cat`. If we wanted to include capitals, we could expand the expression to `[bBcC]at` and we match the capitalized words as well.
 
 ```
-{% raw %} Pattern: [bBcC]at {% endraw %}\n {% raw %} Phrase: 'I love my bat. Cats are good also.' {% endraw %}\n Matches: 'I love my ==bat==. ==Cat==s are good also.' 
+Pattern: '[bBcC]at'
+Phrase: 'I love my bat. Cats are good also.' 
+Matches: 'I love my ==bat==. ==Cat==s are good also.' 
 ```
 ##### Ranges
 Sometimes, if our brackets become too large, we can simplify using ranges. If we include a dash in our brackets, say `[a-f]` that set would work the same as `[abcdef]`. This functionality works the same for capitals and numbers. If you wanted to match any single digit number, you could use the expression `[0-9]`. 
