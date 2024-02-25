@@ -41,7 +41,7 @@ Matches: 'I love my <mark>bat</mark>. <mark>Cat</mark>s are good also.'
 Sometimes, if our brackets become too large, we can simplify using ranges. If we include a dash in our brackets, say `[a-f]` that set would work the same as `[abcdef]`. This functionality works the same for capitals and numbers. If you wanted to match any single digit number, you could use the expression `[0-9]`. 
 
 ##### Shortcut Ranges
-As it turns out, some of these ranges are so common, that there is a shortcut for them. `\d` represents any digit, and is equivalent to `[0-9]` and `[0123456789]`. Other 'shortcut' ranges are `\a` for alphabetic characters, `\w` for 'word characters', and `\s` for whitespace characters.`\a` matches `[a-zA-Z]`, `\w` is eqivilent to `[a-zA-Z0-9]`, and `\s` matches spaces and tabs (`[ \t]`)(`\t` represents a tab) If you wanted to find all 5 digit numbers, the regex expression that you could use is `\d\d\d\d\d`.
+As it turns out, some of these ranges are so common, that there is a shortcut for them. `\d` represents any digit, and is equivalent to `[0-9]` and `[0123456789]`. Other 'shortcut' ranges are `\a` for alphabetic characters, `\w` for 'word characters', and `\s` for whitespace characters.`\a` matches `[a-zA-Z]`, `\w` is eqivalent to `[a-zA-Z0-9]`, and `\s` matches spaces and tabs (`[ \t]`)(`\t` represents a tab) If you wanted to find all 5 digit numbers, the regex expression that you could use is `\d\d\d\d\d`.
 
 Pattern: '\w\s\d\d\s\w'
 
