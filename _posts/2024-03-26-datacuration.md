@@ -14,6 +14,13 @@ As you probably know, this blog covers the data that I collected for Stat 386. M
 #### Dataset variables
 
 My dataset has the variables:
+<table>
+<tr>
+<th> Good </th>
+<th> Bad </th>
+</tr>
+<tr>
+<td>
 
 - Name
 
@@ -27,6 +34,9 @@ My dataset has the variables:
 
 - Overall Rank
 
+</td>
+<td>
+
 - Plays Last Month
 
 - Owns
@@ -36,3 +46,9 @@ My dataset has the variables:
 - Wishlists
 
 - {Category} Rank (Category being any major game category on BGG)
+
+</td>
+</tr>
+</table>
+
+
