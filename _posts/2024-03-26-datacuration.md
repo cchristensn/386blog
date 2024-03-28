@@ -69,4 +69,10 @@ I then put the ids I scraped into a dataframe with its ranking. I repeated this 
 
 ##### API
 
-The second part required using BGG XML API to get information on plays and statistics for each game.
+The second part required using BGG XML API to get information on plays and statistics for each game. Despite the majority of what I wanted being on one page, the api has the information under multiple paths.
+
+|![Ark Nova Stats]({{site.url}}{{site.baseurl}}/assets/img/ArkNovaStats.png)|
+|:--:| 
+| The Stats Page for *Ark Nova* |
+
+There were two different paths that I needed to use to collect all the data I wanted. The first path that I used was /xmlapi2/plays. This path, unsuprisingly, gives information on a games logged plays.
