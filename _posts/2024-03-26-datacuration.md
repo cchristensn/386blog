@@ -50,7 +50,7 @@ After checking both of these pages, I was good to start my curation process.
 
 ### Collection Processes
 
-##### Webscraping
+#### Webscraping
 
 The data collection process was completed in two parts. For the first part, I needed the internal game ids of the top games. To accomplish this, I webscraped BGG's ranking pages. This was quite simple, as game id's were under a unique class in the html code. Furthermore, the ids were found in order of their rank, so I could use their index to determine their rank.
 
@@ -67,7 +67,7 @@ gameids = soup.find_all('a', {'class': 'primary'})
 
 I then put the ids I scraped into a dataframe with its ranking. I repeated this process for every page I wanted to scrape from. Each data frame had 100 entrys and I had 9 dataframes total. I then used a full outer join on all tables based on game id to create one large dataframe with every unique game an rankings for each category.
 
-##### API
+#### API
 
 The second part required using BGG XML API to get information on plays and statistics for each game. Despite the majority of what I wanted being on one page, the api has the information under multiple paths.
 
@@ -75,4 +75,4 @@ The second part required using BGG XML API to get information on plays and stati
 |:--:| 
 | The Stats Page for *Ark Nova* |
 
-There were two different paths that I needed to use to collect all the data I wanted. The first path that I used was /xmlapi2/plays. This path, unsuprisingly, gives information on a games logged plays.
+There were two different paths that I needed to use to collect all the data I wanted. The first path that I used was /xmlapi2/plays. This path, unsuprisingly, gives information on a games logged plays. I used this for the variable 'Plays Last Month'. I gave the API the game id and the minimum date to count plays from. It returns a large XML file that contained a single line with the information I wanted, followed by every play log since the minimum date. I used BeutifulSoup and Regex to extract the total plays in the last month for each game (When using BeutifulSoup on XML, make sure to specify the parameter `features = 'xml'`). Something to note, the window of my data collection is capped at when my code ran. The figure that I recorded was the number of plays between Feb 24, 2024 and Mar 25, 2024.
