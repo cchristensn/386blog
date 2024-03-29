@@ -11,6 +11,8 @@ display_image: true  # change this to true to display the image below the banner
 
 As you probably know, this blog covers the data that I collected for Stat 386. My data set includes information on the top board games as rated on BoardGameGeek (BGG). Data collected using BoardGameGeek's XML API (BGG XML API or BGG API) and web scraping.
 
+If you don't know me, I am 'The Board Game Guy'. I absolutely adore the intrigue and strategy that these games bring. This project is backed by my genuine interest in the subject, and I had a blast working on it.
+
 #### Dataset variables
 
 My data has information on the top 100 games for each category, as well as overall. Because a game can have multiple categories (e.g., Strategy and War), the dataset contains 751 games.
@@ -81,11 +83,11 @@ There were two different paths that I needed to use to collect all the data I wa
  The following sudo code is what I used to get the number of plays for each game:
 
 ```
-playparameters = {"id": <`comma separated list of game ids`>, 
+playparameters = {"id": <comma separated list of game ids>, 
                       'type': 'thing',
                       'mindate':'2024-02-25'}
 
-r=requests.get(<`api 'plays' path`>, params=playparameters)
+r=requests.get(<api 'plays' path>, params=playparameters)
 
 soup = BeautifulSoup(r.text, features='xml')
 gamePlays = re.findall('total="(\d+)"', str(soup.find('plays')))
@@ -93,4 +95,8 @@ gamePlays = re.findall('total="(\d+)"', str(soup.find('plays')))
 
 I then used the 'thing' API path to get the rest of the information that I needed. For my purposes, I also needed to specify the parameter `stats=1`. The process was similar to what I did for getting the number of plays, and allowed me to collect the rest of my variables.
 
-After all of this, I put everything into the data frame that I originally created. In the end, I had a pandas data frame with 751 rows and 18 columns.
+After all of this, I put everything into the data frame that I originally created. In the end, I had a pandas data frame with 751 rows and 18 columns. The only columns with missing values are the `{Category} Rank` columns, which only have 100 non-missing values each. This is mostly because each game belongs to one or two different categories, and thus can't be ranked in other areas.
+
+### Conclusions
+
+I have used the BGG API before when we first used APIs in python, so it was nice using something that I already was familiar with and improve on what I already knew. It was also fun working with board game data. As I said above, board games are my passion, and I am super excited to be exploring this data and parsing any patterns that I can find. If you love board games as well, stay tuned! My next post will be using this data set to make graphs and exploring different EDA questions.
