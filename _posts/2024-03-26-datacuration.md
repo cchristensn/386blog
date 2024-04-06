@@ -80,7 +80,7 @@ There were two different paths that I needed to use to collect all the data I wa
 
  I used BeutifulSoup and Regex to extract the total plays in the last month for each game (When using BeutifulSoup on XML, make sure to specify the parameter `features = 'xml'`). Something to note, the window of my data collection is capped at when my code ran. The figure that I recorded was the number of plays between Feb 25, 2024 and Mar 25, 2024.
 
- The following sudo code is what I used to get the number of plays for each game:
+ The following pseudo code is what I used to get the number of plays for each game:
 
 ```
 playparameters = {"id": <comma separated list of game ids>, 
